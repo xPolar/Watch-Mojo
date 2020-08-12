@@ -108,10 +108,7 @@ class StickyRoles(commands.Cog):
                 Config.CLUSTER["stickyroles"][f"{ctx.guild.id}"].insert_one({"_id": "configuration", "roles": [role.id]})
             else:
                 if role.id in document["roles"]:
-                    embed = discord.Embed(
-                        title = "Error",
-                        color = Config.ERRORCOLOR
-                    )
+                    return
                 else:
                     embed = discord.Embed(
                         title = "Sticky-Role Update",

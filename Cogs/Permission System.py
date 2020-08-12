@@ -74,10 +74,7 @@ class PermissionSystem(commands.Cog):
             else:
                 if "roles" in document:
                     if role.id in document["roles"]:
-                        embed = discord.Embed(
-                            title = "Error",
-                            color = Config.ERRORCOLOR
-                        )
+                        return
                     else:
                         embed = discord.Embed(
                             title = "Permission Update",
