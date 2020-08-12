@@ -67,7 +67,7 @@ class PermissionSystem(commands.Cog):
             if document == None:
                 embed = discord.Embed(
                     title = "Permission Updated",
-                    description = f"`{role}` has been added to the permissions list.",
+                    description = f"`{role}` has been added to the permission list.",
                     color = Config.MAINCOLOR
                 )
                 Config.CLUSTER["servers"]["permissions"].insert_one({"_id": ctx.guild.id, "roles": [role.id]})
@@ -81,14 +81,14 @@ class PermissionSystem(commands.Cog):
                     else:
                         embed = discord.Embed(
                             title = "Permission Updated",
-                            description = f"`{role}` has been added to the permissions list.",
+                            description = f"`{role}` has been added to the permission list.",
                             color = Config.MAINCOLOR
                         )
                         Config.CLUSTER["servers"]["permissions"].update_one({"_id": ctx.guild.id}, {"$push": {"roles": role.id}})
                 else:
                     embed = discord.Embed(
                         title = "Permission Updated",
-                        description = f"`{role}` has been added to the permissions list.",
+                        description = f"`{role}` has been added to the permission list.",
                         color = Config.MAINCOLOR
                     )
                     Config.CLUSTER["servers"]["permissions"].update_one({"_id": ctx.guild.id}, {"$push": {"roles": role.id}})
@@ -118,7 +118,7 @@ class PermissionSystem(commands.Cog):
                     if role.id in document["roles"]:
                         embed = discord.Embed(
                             title = "Permission Updated",
-                            description = f"`{role}` has been removed from the permissions list.",
+                            description = f"`{role}` has been removed from the permission list.",
                             color = Config.MAINCOLOR
                         )
                         Config.CLUSTER["servers"]["permissions"].update_one({"_id": ctx.guild.id}, {"$pull": {"roles": role.id}})
