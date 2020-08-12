@@ -66,7 +66,7 @@ class PermissionSystem(commands.Cog):
             document = Config.CLUSTER["servers"]["permissions"].find_one({"_id": ctx.guild.id})
             if document == None:
                 embed = discord.Embed(
-                    title = "Permission Updated",
+                    title = "Permission Update",
                     description = f"`{role}` has been added to the permission list.",
                     color = Config.MAINCOLOR
                 )
@@ -80,14 +80,14 @@ class PermissionSystem(commands.Cog):
                         )
                     else:
                         embed = discord.Embed(
-                            title = "Permission Updated",
+                            title = "Permission Update",
                             description = f"`{role}` has been added to the permission list.",
                             color = Config.MAINCOLOR
                         )
                         Config.CLUSTER["servers"]["permissions"].update_one({"_id": ctx.guild.id}, {"$push": {"roles": role.id}})
                 else:
                     embed = discord.Embed(
-                        title = "Permission Updated",
+                        title = "Permission Update",
                         description = f"`{role}` has been added to the permission list.",
                         color = Config.MAINCOLOR
                     )
@@ -117,7 +117,7 @@ class PermissionSystem(commands.Cog):
                 else:
                     if role.id in document["roles"]:
                         embed = discord.Embed(
-                            title = "Permission Updated",
+                            title = "Permission Update",
                             description = f"`{role}` has been removed from the permission list.",
                             color = Config.MAINCOLOR
                         )

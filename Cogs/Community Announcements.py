@@ -34,7 +34,7 @@ class CommunityAnnouncements(commands.Cog):
             else:
                 for post in documents:
                     embed = discord.Embed(
-                        description = post["content"] + f"\n\n[View Post]({post['url']})",
+                        description = post["content"],
                         color = Config.MAINCOLOR
                     )
                     embed.set_author(name = "WatchMojo.com")

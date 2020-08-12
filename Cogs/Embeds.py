@@ -28,30 +28,31 @@ class Embeds(commands.Cog):
     
     @commands.command()
     async def embed(self, ctx, *, details = None):
-        try:
-            await ctx.message.delete()
-        except discord.Forbidden:
-            pass
-        if details == None:
-            return
-        else:
-            if details != None:
-                title = details.split("||")[0]
-                description = False
-                if len(details.split("||")) >= 2:
-                    description = details.split("||")[1]
-                embed = discord.Embed(
-                    title = title,
-                    color = Config.MAINCOLOR
-                )
-                if description != False:
-                    embed.description = description
-                if ctx.message.attachments != []:
-                    try:
-                        embed.set_image(url = ctx.message.attachments[0].url)
-                    except:
-                        pass
-                await ctx.send(embed = embed)
+        if self.bypass_filter(ctx) == True:
+            try:
+                await ctx.message.delete()
+            except discord.Forbidden:
+                pass
+            if details == None:
+                return
+            else:
+                if details != None:
+                    title = details.split("||")[0]
+                    description = False
+                    if len(details.split("||")) >= 2:
+                        description = details.split("||")[1]
+                    embed = discord.Embed(
+                        title = title,
+                        color = Config.MAINCOLOR
+                    )
+                    if description != False:
+                        embed.description = description
+                    if ctx.message.attachments != []:
+                        try:
+                            embed.set_image(url = ctx.message.attachments[0].url)
+                        except:
+                            pass
+                    await ctx.send(embed = embed)
 
 def setup(bot):
     bot.add_cog(Embeds(bot))

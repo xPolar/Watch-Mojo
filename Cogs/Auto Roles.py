@@ -96,7 +96,7 @@ class AutoRoles(commands.Cog):
             else:
                 Config.CLUSTER["servers"]["autoroles"].update_one({"_id": ctx.guild.id}, {"$push": {"autoroles": role.id}}, upsert = True)
                 embed = discord.Embed(
-                    title = "Auto-Role Updated",
+                    title = "Auto-Role Update",
                     description = f"`{role.name}` has been added to the auto-role list.",
                     color = Config.MAINCOLOR
                 )
@@ -128,7 +128,7 @@ class AutoRoles(commands.Cog):
                     if document["autoroles"] == None:
                         Config.CLUSTER["servers"]["autoroles"].delete_one({"_id": ctx.guild.id})
                     embed = discord.Embed(
-                        title = "Auto-Role Updated",
+                        title = "Auto-Role Update",
                         description = f"`{role.name}` has been removed from the auto-role list.",
                         color = Config.MAINCOLOR
                     )

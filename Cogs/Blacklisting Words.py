@@ -100,7 +100,7 @@ class BlacklistingWords(commands.Cog):
             document = Config.CLUSTER["servers"]["blacklistedwords"].find_one({"_id": ctx.guild.id})
             if document == None:
                 embed = discord.Embed(
-                    title = "Blacklisted Words Updated!",
+                    title = "Blacklisted Words Update!",
                     description = f"{words} has been added to the blacklisted words list!!",
                     color = Config.MAINCOLOR
                 )
@@ -110,7 +110,7 @@ class BlacklistingWords(commands.Cog):
                     return
                 else:
                     embed = discord.Embed(
-                        title = "Blacklisted Words Updated",
+                        title = "Blacklisted Words Update",
                         description = f"`{words}` has been added to the blacklisted words list.",
                         color = Config.MAINCOLOR
                     )
@@ -134,7 +134,7 @@ class BlacklistingWords(commands.Cog):
                     return
                 else:
                     embed = discord.Embed(
-                        title = "Blacklisted Words Updated",
+                        title = "Blacklisted Words Update",
                         description = f"`{words}` has been removed from the blacklisted words list.",
                         color = Config.MAINCOLOR
                     )

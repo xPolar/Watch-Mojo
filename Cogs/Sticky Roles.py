@@ -101,7 +101,7 @@ class StickyRoles(commands.Cog):
             document = Config.CLUSTER["stickyroles"][f"{ctx.guild.id}"].find_one({"_id": "configuration"})
             if document == None:
                 embed = discord.Embed(
-                    title = "Sticky-Role Updated",
+                    title = "Sticky-Role Update",
                     description = f"`{role}` has been added to the sticky-role list.",
                     color = Config.MAINCOLOR
                 )
@@ -114,7 +114,7 @@ class StickyRoles(commands.Cog):
                     )
                 else:
                     embed = discord.Embed(
-                        title = "Sticky-Role Updated",
+                        title = "Sticky-Role Update",
                         description = f"`{role}` has been added to the sticky-role list.",
                         color = Config.MAINCOLOR
                     )
@@ -141,7 +141,7 @@ class StickyRoles(commands.Cog):
             else:
                 if role.id in document["roles"]:
                     embed = discord.Embed(
-                        title = "Sticky-Role Updated",
+                        title = "Sticky-Role Update",
                         description = f"`{role}` has been removed from the sticky-role list.",
                         color = Config.MAINCOLOR
                     )

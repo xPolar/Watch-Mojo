@@ -116,7 +116,7 @@ class BlacklistedNames(commands.Cog):
             document = Config.CLUSTER["servers"]["badnames"].find_one({"_id": ctx.guild.id})
             if document == None:
                 embed = discord.Embed(
-                    title = "Bad Blacklisted Names Updated",
+                    title = "Bad Blacklisted Names Update",
                     description = f"I have added `{name}` to the list of bad names!",
                     color = Config.MAINCOLOR
                 )
@@ -126,7 +126,7 @@ class BlacklistedNames(commands.Cog):
                         return
                 else:
                     embed = discord.Embed(
-                        title = "Blacklisted Names Updated",
+                        title = "Blacklisted Names Update",
                         description = f"`{name}` has been added to the blacklisted names list.",
                         color = Config.MAINCOLOR
                     )
@@ -150,7 +150,7 @@ class BlacklistedNames(commands.Cog):
                         return
                 else:
                     embed = discord.Embed(
-                        title = "Blacklisted Names Updated",
+                        title = "Blacklisted Names Update",
                         description = f"`{name}` has been removed from the blacklisted names list.",
                         color = Config.MAINCOLOR
                     )
