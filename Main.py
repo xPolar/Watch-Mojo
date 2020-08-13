@@ -97,6 +97,5 @@ async def on_shard_ready(shard_id):
 @bot.event
 async def on_ready():
     print(f"Bot Started | I'm currently in {len(bot.guilds)} servers with {len(bot.users)} users!")
-    await bot.change_presence(status = discord.Status.dnd, activity = discord.Game("with WatchMojo.com"))
 
 bot.run(Config.TOKEN)
