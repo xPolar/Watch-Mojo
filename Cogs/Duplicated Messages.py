@@ -33,28 +33,28 @@ class DuplicatedMessages(commands.Cog):
             if messages[0].author.id == self.bot.user.id:
                 messages.pop(1)
             messages.pop(0)
-            if message.content != "":
-                similar = 0
-                pos = 0
-                split = []
-                for char in message.content.lower():
-                    split.append(char)
-                for m in messages:
-                    split2 = []
-                    for char in m.content.lower():
-                        split2.append(char)
-                    for character in split2:
-                        if len(split) > pos:
-                            if split[pos] == character:
-                                similar += 1
-                            pos += 1
-                if (similar * 3) >= len(message.content):
-                    try:
-                        await message.delete()
-                    except:
-                        return
-                    else:
-                        return
+            # if message.content != "":
+            #     similar = 0
+            #     pos = 0
+            #     split = []
+            #     for char in message.content.lower():
+            #         split.append(char)
+            #     for m in messages:
+            #         split2 = []
+            #         for char in m.content.lower():
+            #             split2.append(char)
+            #         for character in split2:
+            #             if len(split) > pos:
+            #                 if split[pos] == character:
+            #                     similar += 1
+            #                 pos += 1
+            #     if (similar * 3) >= len(message.content):
+            #         try:
+            #             await message.delete()
+            #         except:
+            #             return
+            #         else:
+            #             return
             if message.attachments != []:
                 for attachment in message.attachments:
                     bytes1 = await attachment.read()
