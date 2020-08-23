@@ -44,7 +44,7 @@ class BlacklistedNames(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        if member.bot == False and self.bypass_filter(ctx) == False:
+        if member.bot == False and self.bypass_filter(member) == False:
             document = Config.CLUSTER["servers"]["badnames"].find_one({"_id": member.guild.id})
             if document != None:
                 for name in document["names"]:
